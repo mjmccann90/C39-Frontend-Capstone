@@ -1,0 +1,188 @@
+{
+  "users": [
+    {
+      "name": "Mark",
+      "email": "mark@mark.com",
+      "password": "mark",
+      "id": 1
+    }
+  ],
+  "parks": [
+    {
+      "id": 1,
+      "userId": 1,
+      "park_name": "Shelby Dog Park",
+      "street_address": "Shelby Ave and South 20th Street",
+      "city": "Nashville",
+      "state": "TN"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "park_name": "Centennial Dog Park",
+      "street_address": "2500 West End Ave",
+      "city": "Nashville",
+      "state": "TN"
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "park_name": "Stones River Dog Park",
+      "street_address": "3734 Bell Rd",
+      "city": "Nashville",
+      "state": "TN"
+    },
+    {
+      "id": 4,
+      "userId": 1,
+      "park_name": "Two Rivers Dog Park",
+      "street_address": "3150 McGavock Pk",
+      "city": "Nashville",
+      "state": "TN"
+    },
+    {
+      "id": 5,
+      "userId": 1,
+      "park_name": "Downtown Dog Park",
+      "street_address": "100 1st Ave North",
+      "city": "Nashville",
+      "state": "TN"
+    },
+    {
+      "id": 6,
+      "userId": 1,
+      "park_name": "Edwin Warner Dog Park",
+      "street_address": "50 Vaughn Rd",
+      "city": "Nashville",
+      "state": "TN"
+    },
+    {
+      "id": 7,
+      "userId": 1,
+      "park_name": "Pitts Dog Park",
+      "street_address": "299 Tusculum Rd",
+      "city": "Antioch",
+      "state": "TN"
+    },
+    {
+      "id": 8,
+      "userId": 1,
+      "park_name": "Bark Springs Dog Park",
+      "street_address": "1000 Espey Drive",
+      "city": "Antioch",
+      "state": "TN"
+    },
+    {
+      "id": 9,
+      "userId": 1,
+      "park_name": "Fair Park Dog Park",
+      "street_address": "625 Smith Ave",
+      "city": "Nashville",
+      "state": "TN"
+    },
+    {
+      "id": 10,
+      "userId": 1,
+      "park_name": "Fenway’s Dog Park",
+      "street_address": "745 Caldwell Dr",
+      "city": "Goodlettsville",
+      "state": "TN"
+    },
+    {
+      "id": 11,
+      "userId": 1,
+      "park_name": "Gulch Dog Park",
+      "street_address": "1216 Pine St",
+      "city": "Nashville",
+      "state": "TN"
+    },
+    {
+      "id": 12,
+      "userId": 1,
+      "park_name": "Nolensville Dog Park",
+      "street_address": "2310 Rocky Fork Rd",
+      "city": "Nolensville",
+      "state": "TN"
+    },
+    {
+      "id": 13,
+      "userId": 1,
+      "park_name": "Barkwood Dog Park",
+      "street_address": "920 Heritage Way",
+      "city": "Brentwood",
+      "state": "TN"
+    },
+    {
+      "id": 14,
+      "userId": 1,
+      "park_name": "Nashboro Dog Park",
+      "street_address": "710 Nashboro Blvd",
+      "city": "Nashville",
+      "state": "TN"
+    },
+    {
+      "id": 15,
+      "userId": 1,
+      "park_name": "Freedom Run Dog Park",
+      "street_address": "2098 Turning Wheel Ln",
+      "city": "Franklin",
+      "state": "TN"
+    },
+    {
+      "id": 16,
+      "userId": 1,
+      "park_name": "Maggie’s Park",
+      "street_address": "138 Claude Yates Dr",
+      "city": "Franklin",
+      "state": "TN"
+    },
+    {
+      "id": 17,
+      "userId": 1,
+      "park_name": "K-9 Korral Dog Park",
+      "street_address": "239 Franklin Rd",
+      "city": "Franklin",
+      "state": "TN"
+    },
+    {
+      "id": 18,
+      "userId": 1,
+      "park_name": "Blake’s Bark Park",
+      "street_address": "3680 N Chapel Rd",
+      "city": "Franklin",
+      "state": "TN"
+    },
+    {
+      "id": 19,
+      "userId": 1,
+      "park_name": "Mount Juliet Bark Park",
+      "street_address": "143 SE Springdale Dr",
+      "city": "Mt. Juliet",
+      "state": "TN"
+    },
+    {
+      "id": 20,
+      "userId": 1,
+      "park_name": "Murfreesboro Bark Park",
+      "street_address": "1540 West College Street",
+      "city": "Murfreesboro",
+      "state": "TN"
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "userId": 1,
+      "parkId": 1,
+      "review_description": "placeholder"
+    }
+  ],
+  "favorites": [
+    {
+      "id": 1,
+      "parkId": 1,
+      "userId": 1,
+      "park_name": "placeholder"
+    }
+  ]
+}
