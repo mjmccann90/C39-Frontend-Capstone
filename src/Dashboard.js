@@ -2,6 +2,8 @@ import React from "react"
 import { ParkDataProvider } from "../src/components/park/ParkDataProvider"
 import { ParkList } from "../src/components/park/ParkList"
 
+// import "./Layout.css"
+
 export const Dashboard = () => (
     <>
         <h2>test</h2>
