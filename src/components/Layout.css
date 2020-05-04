@@ -1,0 +1,27 @@
+.mainContainer {
+  display: flex;
+  flex-direction: row;
+  padding: 0.75rem;
+}
+
+.dataContainer {
+  padding: 2rem;
+  flex: 4;
+}
+
+.listContainer {
+  padding-top: 3rem;
+  border-top: 1px solid gray;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid darkorchid;
+}
+
+.links {
+  flex: 1;
+}
+
+.listDisplay {
+  flex: 5;
+  border: 1px dotted navy;
+}

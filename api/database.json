@@ -168,6 +168,14 @@
       "street_address": "1540 West College Street",
       "city": "Murfreesboro",
       "state": "TN"
+    },
+    {
+      "park_name": "test",
+      "street_address": "test",
+      "city": "test",
+      "state": "test",
+      "userId": 1,
+      "id": 21
     }
   ],
   "reviews": [
