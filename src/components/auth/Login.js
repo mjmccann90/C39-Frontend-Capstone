@@ -5,8 +5,7 @@ import "./Login.css"
 const Login = props => {
     const email = useRef()
     const password = useRef()
-    const customerName = useRef()
-    const address = useRef()
+
 
     const existingUserCheck = () => {
         return fetch(`http://localhost:8088/customers?email=${email.current.value}`)
@@ -25,7 +24,7 @@ const Login = props => {
         existingUserCheck()
             .then(exists => {
                 if (exists && exists.password === password.current.value) {
-                    localStorage.setItem("kennel_customer", exists.id)
+                    localStorage.setItem("dog_owner", exists.id)
                     props.toggle()
                 } else if (exists && exists.password !== password.current.value) {
                     window.alert("Password does not match")
