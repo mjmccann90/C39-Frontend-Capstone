@@ -1,7 +1,8 @@
 {
   "users": [
     {
-      "name": "Mark",
+      "firstName": "Mark",
+      "lastName": "McCann",
       "email": "mark@mark.com",
       "password": "mark",
       "id": 1
