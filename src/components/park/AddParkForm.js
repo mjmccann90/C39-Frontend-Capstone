@@ -22,7 +22,6 @@ export default props => {
             street_address: street_address.current.value,
             city: city.current.value,
             state: state.current.value,
-
             userId: userId
         }
         console.log(newParkObj)
