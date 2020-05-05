@@ -22,7 +22,6 @@ export default props => {
             street_address: street_address.current.value,
             city: city.current.value,
             state: state.current.value,
-
             userId: userId
         }
         console.log(newParkObj)
@@ -32,10 +31,10 @@ export default props => {
 
     return (
         <form className="parkForm">
-            <h2 className="parkForm__Name">New Park</h2>
+            <h2 className="parkForm__Name"></h2>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="parkForm--park_name">Park Name: </label>
+                    <label htmlFor="parkForm--park_name"> </label>
                     <input
                         type="text"
                         id="park_name"
@@ -49,7 +48,7 @@ export default props => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="parkForm--street_address">Address: </label>
+                    <label htmlFor="parkForm--street_address"> </label>
                     <input
                         type="text"
                         id="street_address"
@@ -63,7 +62,7 @@ export default props => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="city">City: </label>
+                    <label htmlFor="city"></label>
                     <input
                         type="text"
                         id="city"
@@ -77,7 +76,7 @@ export default props => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="state">State: </label>
+                    <label htmlFor="state"> </label>
                     <input
                         type="text"
                         id="state"

@@ -11,11 +11,11 @@
   "dogParks": [
     {
       "id": 1,
-      "userId": 1,
       "park_name": "Shelby Dog Park",
       "street_address": "Shelby Ave and South 20th Street",
       "city": "Nashville",
-      "state": "TN"
+      "state": "TN",
+      "userId": 1
     },
     {
       "id": 2,
