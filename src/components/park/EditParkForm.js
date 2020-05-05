@@ -20,7 +20,7 @@ export const EditParkForm = ({ dogPark, toggleEdit }) => {
         const newPark = Object.assign({}, updatedPark)
 
         // Change the property value on the copy
-        newPark[event.target.park_name] = event.target.value
+        newPark[event.target.name] = event.target.value
 
         // Set the copy as the new state
         setPark(newPark)
@@ -31,7 +31,7 @@ export const EditParkForm = ({ dogPark, toggleEdit }) => {
             park_name: updatedPark.park_name,
             street_address: updatedPark.street_address,
             city: updatedPark.city,
-            state: updated.state,
+            state: updatedPark.state,
             userId: parseInt(localStorage.getItem("dog_owner"))
         })
             .then(toggleEdit)

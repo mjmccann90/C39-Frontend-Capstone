@@ -32,7 +32,7 @@ export const ParkDataProvider = (props) => {
     }
 
     const updatePark = park => {
-        return fetch(`http://localhost:8088/dogParks/${dogPark.id}`, {
+        return fetch(`http://localhost:8088/dogParks/${park.id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
