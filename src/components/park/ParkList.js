@@ -21,7 +21,7 @@ export const ParkList = () => {
                     // If the user is authenticated, show the new park form
                     toggle()
                 }
-            }}>Make Appointment</Button>
+            }}>Add a New Park</Button>
             <div className="animals"></div>
             <div className="allTheDogParks">
                 {

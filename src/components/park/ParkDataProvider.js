@@ -31,16 +31,16 @@ export const ParkDataProvider = (props) => {
             .then(getParks)
     }
 
-    // const updatePark = park => {
-    //     return fetch(`http://localhost:8088/dogParks/${dogPark.id}`, {
-    //         method: "PUT",
-    //         headers: {
-    //             "Content-Type": "application/json"
-    //         },
-    //         body: JSON.stringify(park)
-    //     })
-    //         .then(getParks)
-    // }
+    const updatePark = park => {
+        return fetch(`http://localhost:8088/dogParks/${dogPark.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(park)
+        })
+            .then(getParks)
+    }
 
     /*
         Load all parks when the component is initialized. Ensure that
@@ -55,7 +55,7 @@ export const ParkDataProvider = (props) => {
             {
                 parks,
                 addPark,
-                // updatePark
+                updatePark
             }
         }>
             {props.children}
