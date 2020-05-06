@@ -42,6 +42,8 @@ export const FavoriteDataProvider = (props) => {
             .then(getFavorites)
     }
 
+
+
     /*
         Load all favorites when the component is initialized. Ensure that
         an empty array is the second argument to avoid infinite loop.
