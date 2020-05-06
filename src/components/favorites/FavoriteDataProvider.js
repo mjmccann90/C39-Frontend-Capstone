@@ -12,7 +12,7 @@ export const FavoriteContext = React.createContext()
 export const FavoriteDataProvider = (props) => {
     // favorites = data
     // setfavorites = function that React created, so we can use it to set state of favorites
-    const [favorites, setfavorites] = useState([])
+    const [favorites, setFavorites] = useState([])
 
     const getFavorites = () => {
         return fetch("http://localhost:8088/favorites")
