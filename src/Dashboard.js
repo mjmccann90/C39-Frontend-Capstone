@@ -10,7 +10,7 @@ import { FavoriteList } from "../src/components/favorites/FavoriteList"
 
 
 export default () => {
-    const [activeList, setActiveList] = useState("locations")
+    const [activeList, setActiveList] = useState("dogPark")
     const [components, setComponents] = useState()
 
 
@@ -50,9 +50,8 @@ export default () => {
                 <small>Loving care when you're not there.</small>
                 <div className="listContainer">
                     <div className="links">
-                        <div className="fakeLink href" onClick={() => setActiveList("locations")}>Locations</div>
-                        <div className="fakeLink href" onClick={() => setActiveList("customers")}>Customers</div>
-                        <div className="fakeLink href" onClick={() => setActiveList("employees")}>Employees</div>
+                        <div className="fakeLink href" onClick={() => setActiveList("dogParks")}>Locations</div>
+                        <div className="fakeLink href" onClick={() => setActiveList("favorites")}>Customers</div>
                     </div>
                     <div className="listDisplay">
                         {components}
