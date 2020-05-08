@@ -1,32 +1,28 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { ParkDataProvider } from "../src/components/park/ParkDataProvider"
 import { ParkList } from "../src/components/park/ParkList"
+import { FavoriteDataProvider } from "./components/favorites/FavoriteDataProvider"
 
 import { FavoriteDataProvider } from "../src/components/favorites/FavoriteDataProvider"
 import { FavoriteList } from "../src/components/favorites/FavoriteList"
 
-// import "./Layout.css"
+import "./Layout.css"
 
-
-
-export default () => {
-    const [activeList, setActiveList] = useState("dogPark")
+export const Dashboard = () => {
+    const [activeList, setActiveList] = useState("allTheDogParks")
     const [components, setComponents] = useState()
 
-
-    // HIGHER ORDER FUNCTION. IT RETURNS OTHER FUNCTION (i.e. COMPONENTS)
-    const showParks = () => (
+    const showDogParks = () => (
         <ParkDataProvider>
             <ParkList />
-        </ParkDataProvider >
+        </ParkDataProvider>
     )
-
-    const showFavorites = () => (
-        <FavoriteDataProvider>
-            <ParkDataProvider>
+    const showFavoriteDogParks = () => (
+        <ParkDataProvider>
+            <FavoriteDataProvider>
                 <FavoriteList />
-            </ParkDataProvider>
-        </FavoriteDataProvider>
+            </FavoriteDataProvider>
+        </ParkDataProvider >
     )
 
     /*
@@ -34,30 +30,42 @@ export default () => {
         based on the state of the `activeList` variable.
     */
     useEffect(() => {
-        if (activeList === "parks") {
-            setComponents(showParks)
+        if (activeList === "allTheDogParks") {
+            setComponents(showDogParks)
         }
-        else if (activeList === "favorites") {
-            setComponents(showFavorites)
+        else if (activeList === "favoriteDogParks") {
+            setComponents(showFavoriteDogParks)
         }
     }, [activeList])
-)
+
 
     return (
         <div className="mainContainer">
+            {/* Search is a strech 👇🏻 */}
+            {/* <div className="searchContainer">
+                    <ParkDataProvider>
+                        <FavoriteDataProvider>>
+
+                            <SearchBar setTerms={setTerms} />
+                            <SearchResults searchTerms={searchTerms} />
+
+                        </FavoriteDataProvider>
+                    </ParkDataProvider>
+                </div> */}
             <div className="dataContainer">
-                <h1>Nashville Kennels</h1>
-                <small>Loving care when you're not there.</small>
                 <div className="listContainer">
                     <div className="links">
-                        <div className="fakeLink href" onClick={() => setActiveList("dogParks")}>Locations</div>
-                        <div className="fakeLink href" onClick={() => setActiveList("favorites")}>Customers</div>
-                    </div>
+                        <div className="fakeLink href" onClick={() => setActiveList("allTheDogParks")}>All the Dog Parks</div>
+                        < div className="fakeLink href" onClick={() => setActiveList("favoriteDogParks")}> Favorite Parks</div >
+                    </div >
                     <div className="listDisplay">
                         {components}
-                    </div>
-                </div>
-            </div>
-        </div>
+                    </div >
+                </div >
+
+            </div >
+        </div >
     )
+
 }
+

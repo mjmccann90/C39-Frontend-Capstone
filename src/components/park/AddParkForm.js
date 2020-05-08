@@ -24,8 +24,6 @@ export default props => {
             state: state.current.value,
             userId: userId
         }
-        console.log(newParkObj)
-        // and save it to the API.
         addPark(newParkObj).then(props.toggler)
     }
 
