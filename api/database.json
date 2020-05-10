@@ -176,6 +176,22 @@
       "state": "test",
       "userId": 1,
       "id": 21
+    },
+    {
+      "id": 22,
+      "park_name": "BarkPark!!!!!",
+      "street_address": "800 Meridian St",
+      "city": "Nash",
+      "state": "TN",
+      "userId": 1
+    },
+    {
+      "park_name": "test 555",
+      "street_address": "est",
+      "city": "test555",
+      "state": "test555555",
+      "userId": 1,
+      "id": 23
     }
   ],
   "reviews": [
