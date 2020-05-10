@@ -12,6 +12,7 @@ export default props => {
     const state = useRef()
 
 
+
     // Function to create an object and save it to the API
     const constructNewPark = () => {
         const userId = parseInt(localStorage.getItem("dog_owner"))
@@ -24,8 +25,6 @@ export default props => {
             state: state.current.value,
             userId: userId
         }
-        console.log(newParkObj)
-        // and save it to the API.
         addPark(newParkObj).then(props.toggler)
     }
 
