@@ -12,6 +12,7 @@ export default props => {
     const state = useRef()
 
 
+
     // Function to create an object and save it to the API
     const constructNewPark = () => {
         const userId = parseInt(localStorage.getItem("dog_owner"))

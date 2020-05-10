@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react"
+
 import { ParkDataProvider } from "../src/components/park/ParkDataProvider"
 import { ParkList } from "../src/components/park/ParkList"
 import { FavoriteDataProvider } from "./components/favorites/FavoriteDataProvider"
-
-import { FavoriteDataProvider } from "../src/components/favorites/FavoriteDataProvider"
 import { FavoriteList } from "../src/components/favorites/FavoriteList"
 
-import "./Layout.css"
+import "./components/Layout.css"
 
 export const Dashboard = () => {
     const [activeList, setActiveList] = useState("allTheDogParks")
