@@ -6,6 +6,13 @@
       "email": "mark@mark.com",
       "password": "mark",
       "id": 1
+    },
+    {
+      "firstName": "Joe",
+      "lastName": "Chesney ",
+      "email": "joe@joe.com",
+      "password": "joe",
+      "id": 2
     }
   ],
   "dogParks": [
@@ -207,6 +214,13 @@
       "id": 1,
       "parkId": 1,
       "userId": 1,
+      "reviewId": 1,
+      "park_name": "placeholder"
+    },
+    {
+      "id": 1,
+      "parkId": 1,
+      "userId": 2,
       "reviewId": 1,
       "park_name": "placeholder"
     }

@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { Button, Modal, ModalHeader, ModalBody } from "reactstrap"
 
 
-import { DogParkContext } from "./ParkDataProvider"
+// import { DogParkContext } from "./ParkDataProvider"
 import { EditParkForm } from "./EditParkForm"
 import "./Park.css"
 
@@ -24,6 +24,7 @@ export const DogPark = ({ dogPark }) => {
             <Button className="EditParkForm" color="primary" onClick={() => {
                 toggleEdit()
             }}>Edit</Button>
+            <Button className="FavoriteButton">Favorite</Button>
 
             <Modal isOpen={editModal} toggle={toggleEdit}>
                 <ModalHeader toggle={toggleEdit}>
@@ -32,6 +33,7 @@ export const DogPark = ({ dogPark }) => {
                 <ModalBody>
 
                     <EditParkForm key={dogPark.id} toggleEdit={toggleEdit} dogPark={dogPark} />
+
 
                 </ModalBody>
             </Modal>
