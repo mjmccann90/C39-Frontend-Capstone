@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react"
 
 import { ParkDataProvider } from "../src/components/park/ParkDataProvider"
 import { ParkList } from "../src/components/park/ParkList"
-import { FavoriteDataProvider } from "./components/favorites/FavoriteDataProvider"
-import { FavoriteList } from "../src/components/favorites/FavoriteList"
+import { FavoriteDataProvider } from "./components/favorite/FavoriteDataProvider"
+import { FavoriteList } from "./components/favorite/FavoriteList"
 
 import "./components/Layout.css"
 
