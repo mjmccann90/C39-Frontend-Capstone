@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React, { useContext, useState } from "react"
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap"
 
 import { DogParkContext } from "../park/ParkDataProvider"
@@ -11,7 +11,7 @@ import AddReviewForm from "../reviews/AddReviewForm"
 
 export default () => {
     const { reviews } = useContext(ReviewContext)
-    const { dogParks } = useContext(DogParkContext)
+    const { parks } = useContext(DogParkContext)
 
     const [modal, setModal] = useState(false)
     const toggle = () => setModal(!modal)
@@ -25,9 +25,9 @@ export default () => {
             <ul className="reviews">
                 {
                     reviews.map(review => {
-                        const dPar = dogParks.find(dp => dp.id === review.locationId)
+                        const dPar = parks.find(dp => dp.id === review.parkId)
 
-                        return <Review key={review.id} location={dPar} review={review} />
+                        return <Review key={review.id} park={dPar} review={review} />
                     })
                 }
             </ul>
@@ -37,7 +37,7 @@ export default () => {
                     New Review
                 </ModalHeader>
                 <ModalBody>
-                    <EmployeeForm toggler={toggle} />
+                    <AddReviewForm toggler={toggle} />
                 </ModalBody>
             </Modal>
         </>

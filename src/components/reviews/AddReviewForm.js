@@ -1,11 +1,11 @@
 import React, { useContext, useRef } from "react"
 import { ReviewContext } from "./ReviewDataProvider"
-import { DogParkContext } from "../location/LocationProvider"
-import "./Employee.css"
+import { DogParkContext } from "../park/ParkDataProvider"
+import "./Review.css"
 
 export default props => {
     const { addReview } = useContext(ReviewContext)
-    const { park_location } = useContext(DogParkContext)
+    const { park_locations } = useContext(DogParkContext)
 
     const reviewTitle = useRef()
     const review_description = useRef()
@@ -19,7 +19,7 @@ export default props => {
             window.alert("Please select a park to review")
         } else {
             addReview({
-                park_name: park_name.current.value,
+                reviewTitle: reviewTitle.current.value,
                 park_location_Id: park_location_Id,
                 review_description: review_description.current.value
             })
@@ -28,14 +28,14 @@ export default props => {
     }
 
     return (
-        // may refactor after mother's day dinner
+
         <form className="park_review_form">
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="park_review__form_park_title">Park review title: </label>
                     <input
                         type="text"
-                        id="park_review__form_park_name"
+                        id="park_review__form_reviewTitle"
                         ref={reviewTitle}
                         required
                         autoFocus
@@ -73,7 +73,7 @@ export default props => {
                         <option value="0">Select a park to review</option>
                         {park_locations.map(e => (
                             <option key={e.id} value={e.id}>
-                                {e.park_name}
+                                {e.reviewTitle}
                             </option>
                         ))}
                     </select>

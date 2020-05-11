@@ -22,7 +22,7 @@ export const ParkList = () => {
                     toggle()
                 }
             }}>Add a New Park</Button>
-            <div className="animals"></div>
+            <div className="dogParks"></div>
             <div className="allTheDogParks">
                 {
                     parks.map(dogP => <DogPark key={dogP.id} dogPark={dogP} />)

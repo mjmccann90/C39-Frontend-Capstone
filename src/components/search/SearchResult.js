@@ -1,15 +1,15 @@
 import React, { useState, useContext, useEffect } from "react"
 import { DogParkContext } from "../park/ParkDataProvider"
-// import { Animal } from "../animal/Animal"
-import { FavoriteContext } from "../favorite/FavoriteDataProvider"
+import { DogPark } from "../park/Park"
+//import { FavoriteContext } from "../favorite/FavoriteDataProvider"
 import { ReviewContext } from "../reviews/ReviewDataProvider"
 import { Modal, ModalHeader, ModalBody, Button, ModalFooter } from "reactstrap"
-// import { EditAnimalForm } from "../animal/EditAnimalForm"
+import { EditParkForm } from "../park/EditParkForm"
 
 
 export const SearchResults = ({ searchTerms }) => {
-    const { dogParks } = useContext(DogParkContext)
-    const { favorites, removePark } = useContext(FavoriteContext)
+    const { parks } = useContext(DogParkContext)
+    // const { favorites, removePark } = useContext(FavoriteContext)
     const { reviews, removeReview } = useContext(ReviewContext)
 
 
@@ -31,25 +31,25 @@ export const SearchResults = ({ searchTerms }) => {
 
     useEffect(() => {
         if (searchTerms !== "") {
-            const subset = dogParks.filter(dogPark => dogPark.name.toLowerCase().includes(searchTerms))
+            const subset = parks.filter(dogPark => dogPark.park_name.toLowerCase().includes(searchTerms))
             setFiltered(subset)
         } else {
             setFiltered([])
         }
-    }, [searchTerms, dogParks])
+    }, [searchTerms, parks])
 
     return (
         <div className="searchResults">
             <h3>Results</h3>
-            <div className="dogParks">
+            <div className="parks">
                 {
                     filteredDogParks.map(dogPark => <div
                         className="fakeLink href"
                         onClick={() => {
-                            const favorite = favorites.find(fav => fav.id === dogPark.favoriteId)
+                            //const favorite = favorites.find(fav => fav.id === dogPark.favoriteId)
                             const review = reviews.find(userReview => userReview.id === dogPark.reviewId)
 
-                            setDogPark({ dogPark, favorite, review })
+                            setDogPark({ dogPark, review })
                             toggle()
                         }}
                     >{dogPark.name}</div>)
@@ -70,10 +70,10 @@ export const SearchResults = ({ searchTerms }) => {
 
             <Modal isOpen={modal} toggle={toggle}>
                 <ModalHeader toggle={toggle}>
-                    {selectedDogPark.dogPark.name}
+                    {selectedDogPark.dogPark.park_name}
                 </ModalHeader>
                 <ModalBody>
-                    <Animal key={selectedAnimal.dogPark.id} {...selectedDogPark} />
+                    <DogPark key={selectedDogPark.dogPark.id} {...selectedDogPark} />
                 </ModalBody>
                 <ModalFooter>
                     <Button color="info" onClick={() => {

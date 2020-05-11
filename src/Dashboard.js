@@ -2,19 +2,23 @@ import React, { useState, useEffect } from "react"
 
 import { ParkDataProvider } from "../src/components/park/ParkDataProvider"
 import { ParkList } from "../src/components/park/ParkList"
+import "../src/components/park/Park.css"
 
-import { FavoriteDataProvider } from "./components/favorite/FavoriteDataProvider"
-import { FavoriteList } from "./components/favorite/FavoriteList"
 
-import { ReviewDataProvider } from "./components/reviews/ReviewDataProvider"
-import { ReviewList } from "./components/reviews/ReviewList"
+// import { FavoriteDataProvider } from "./components/favorite/FavoriteDataProvider"
+// import { FavoriteList } from "./components/favorite/FavoriteList"
 
-import { SearchBar } from "./components/search/Searchbar"
-import { SearchResults } from "./components/search/SearchResult"
+import { ReviewDataProvider } from "../src/components/reviews/ReviewDataProvider"
+import ReviewList from "../src/components/reviews/ReviewList"
+import "../src/components/reviews/Review.css"
+
+import { SearchBar } from "../src/components/search/Searchbar"
+import { SearchResults } from "../src/components/search/SearchResult"
 
 import "./components/Layout.css"
 
 export const Dashboard = () => {
+    const [searchTerms, setTerms] = useState(null)
     const [activeList, setActiveList] = useState("allTheDogParks")
     const [components, setComponents] = useState()
 
@@ -31,13 +35,13 @@ export const Dashboard = () => {
         </ParkDataProvider>
     )
 
-    const showFavoriteDogParks = () => (
-        <ParkDataProvider>
-            <FavoriteDataProvider>
-                <FavoriteList />
-            </FavoriteDataProvider>
-        </ParkDataProvider >
-    )
+    // const showFavoriteDogParks = () => (
+    //     <ParkDataProvider>
+    //         <FavoriteDataProvider>
+    //             <FavoriteList />
+    //         </FavoriteDataProvider>
+    //     </ParkDataProvider >
+    // )
 
     /*
         This effect hook determines which list is shown
@@ -47,12 +51,12 @@ export const Dashboard = () => {
         if (activeList === "allTheDogParks") {
             setComponents(showDogParks)
         }
-        else if (activeList === "favoriteDogParks") {
-            setComponents(showFavoriteDogParks)
-        }
         else if (activeList === "reviewedDogParks") {
             setComponents(showReviewedDogParks)
         }
+        // else if (activeList === "favoriteDogParks") {
+        //     setComponents(showFavoriteDogParks)
+        // }
     }, [activeList])
 
 
@@ -60,21 +64,21 @@ export const Dashboard = () => {
         <div className="mainContainer">
             <div className="searchContainer">
                 <ParkDataProvider>
-                    <FavoriteDataProvider>
-                        <ReviewDataProvider>
+                    {/* <FavoriteDataProvider> */}
+                    <ReviewDataProvider>
 
-                            <SearchBar setTerms={setTerms} />
-                            <SearchResults searchTerms={searchTerms} />
+                        <SearchBar setTerms={setTerms} />
+                        <SearchResults searchTerms={searchTerms} />
 
-                        </ReviewDataProvider>
-                    </FavoriteDataProvider>
+                    </ReviewDataProvider>
+                    {/* </FavoriteDataProvider> */}
                 </ParkDataProvider>
             </div>
             <div className="dataContainer">
                 <div className="listContainer">
                     <div className="links">
                         <div className="fakeLink href" onClick={() => setActiveList("allTheDogParks")}>All the Dog Parks</div>
-                        < div className="fakeLink href" onClick={() => setActiveList("favoriteDogParks")}> Favorite Parks</div >
+                        {/* < div className="fakeLink href" onClick={() => setActiveList("favoriteDogParks")}> Favorite Parks</div > */}
                         < div className="fakeLink href" onClick={() => setActiveList("reviewedDogParks")}> Reviewed Parks</div >
                     </div >
                     <div className="listDisplay">
