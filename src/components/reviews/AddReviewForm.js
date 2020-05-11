@@ -32,7 +32,7 @@ export default props => {
         <form className="park_review_form">
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="park_review__form_park_name">Park Name: </label>
+                    <label htmlFor="park_review__form_park_name">Park review title: </label>
                     <input
                         type="text"
                         id="park_review__form_park_name"
@@ -62,7 +62,7 @@ export default props => {
 
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="park_review__form_location">Assign Park Location: </label>
+                    <label htmlFor="park_review__form_location">Select a park to review: </label>
                     <select
                         defaultValue=""
                         name="park_location"
@@ -70,10 +70,10 @@ export default props => {
                         id="park_review__form_location"
                         className="form-control"
                     >
-                        <option value="0">Select a location</option>
+                        <option value="0">Select a park to review</option>
                         {park_locations.map(e => (
                             <option key={e.id} value={e.id}>
-                                {e.name}
+                                {e.park_name}
                             </option>
                         ))}
                     </select>
@@ -83,11 +83,11 @@ export default props => {
                 onClick={
                     evt => {
                         evt.preventDefault() // Prevent browser from submitting the form
-                        constructNewEmployee()
+                        constructNewReview()
                     }
                 }
                 className="btn btn-primary">
-                Save Employee
+                Save Review
             </button>
         </form>
     )

@@ -28,7 +28,7 @@ export const DogPark = ({ dogPark }) => {
             <Button className="FavoriteButton">Favorite</Button>
 
 
-            <Modal isOpen={editModal} toggle={toggleEdit}>
+            {/* <Modal isOpen={editModal} toggle={toggleEdit}>
                 <ModalHeader toggle={toggleEdit}>
                     {dogPark.park_name}
                 </ModalHeader>
@@ -38,7 +38,7 @@ export const DogPark = ({ dogPark }) => {
 
 
                 </ModalBody>
-            </Modal>
+            </Modal> */}
 
             <Modal isOpen={editModal} toggle={toggleEdit}>
                 <ModalHeader toggle={toggleEdit}>
