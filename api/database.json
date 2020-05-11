@@ -207,6 +207,7 @@
       "id": 1,
       "userId": 1,
       "parkId": 1,
+      "reviewTitle": "review title",
       "review_description": "review description"
     }
   ],

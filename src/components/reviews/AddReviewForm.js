@@ -7,7 +7,7 @@ export default props => {
     const { addReview } = useContext(ReviewContext)
     const { park_location } = useContext(DogParkContext)
 
-    const park_name = useRef()
+    const reviewTitle = useRef()
     const review_description = useRef()
     const park_location = useRef()
 
@@ -32,11 +32,11 @@ export default props => {
         <form className="park_review_form">
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="park_review__form_park_name">Park review title: </label>
+                    <label htmlFor="park_review__form_park_title">Park review title: </label>
                     <input
                         type="text"
                         id="park_review__form_park_name"
-                        ref={park_name}
+                        ref={reviewTitle}
                         required
                         autoFocus
                         className="form-control"

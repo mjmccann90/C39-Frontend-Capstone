@@ -1,56 +1,38 @@
-import React, { useState } from "react"
-import { Button, Modal, ModalHeader, ModalBody } from "reactstrap"
+// When we use Employee component in EmployeeList, React takes the keys passed
+// to the Employee component and puts it into one object
 
+import React, { useState, useContext } from "react"
+import { Modal, ModalHeader, ModalBody } from "reactstrap"
+import { ReviewContext } from "../reviews/ReviewDataProvider"
 
-// import { DogParkContext } from "./ParkDataProvider"
-import { EditReviewForm } from "./EditParkForm"
-import "./Review.css"
+export default ({ review, dogPark }) => {
+    const [modal, setModal] = useState(false)
+    const toggle = () => setModal(!modal)
 
-
-export default = ({ dogPark }) => {
-    // const { updatePark } = useContext(DogParkContext)
-    const [editModal, setEditModal] = useState(false)
-    const toggleEdit = () => setEditModal(!editModal)
+    const { deleteReview } = useContext(ReviewContext)
 
     return (
+        <>
+            <li>
+                <span className="fakeLink href" onClick={toggle}>{review.reviewTitle}</span>
+                <span className="fakeLink icon--delete" onClick={() => {
+                    deleteReview(review)
+                }}>🗑</span>
+            </li>
 
-        < section className="dogPark" >
-
-            <div className="dogPark__park_name">{dogPark.park_name}</div>
-            <div className="dogPark__street_address">{dogPark.street_address}</div>
-            <div className="dogPark__city">{dogPark.city}</div>
-            <div className="dogPark__state">{dogPark.state}</div>
-
-
-            <Button className="EditParkForm" color="primary" onClick={() => {
-                toggleEdit()
-            }}>Edit</Button>
-            <Button className="FavoriteButton">Favorite</Button>
-
-
-            {/* <Modal isOpen={editModal} toggle={toggleEdit}>
-                <ModalHeader toggle={toggleEdit}>
-                    {dogPark.park_name}
+            <Modal isOpen={modal} toggle={toggle}>
+                <ModalHeader toggle={toggle}>
+                    {review.reviewTitle}
                 </ModalHeader>
                 <ModalBody>
-
-                    <EditParkForm key={dogPark.id} toggleEdit={toggleEdit} dogPark={dogPark} />
-
-
-                </ModalBody>
-            </Modal> */}
-
-            <Modal isOpen={editModal} toggle={toggleEdit}>
-                <ModalHeader toggle={toggleEdit}>
-                    {dogPark.park_name}
-                </ModalHeader>
-                <ModalBody>
-
-                    <EditParkForm key={dogPark.id} toggleEdit={toggleEdit} dogPark={dogPark} />
-
-
+                    <div className="dog__park_name">
+                        <label className="label--review">Park name:</label> {dogPark.parkId}
+                    </div>
+                    <div className="dog__park_description">
+                        <label className="label--review">Review note</label> {review.decription}
+                    </div>
                 </ModalBody>
             </Modal>
-        </section >
+        </>
     )
 }
