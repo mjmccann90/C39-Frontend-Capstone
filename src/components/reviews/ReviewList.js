@@ -5,7 +5,7 @@ import { DogParkContext } from "../park/ParkDataProvider"
 
 import { ReviewContext } from "../reviews/ReviewDataProvider"
 import Review from "../reviews/Review"
-import "../reviews/Review.css"
+import "./Review.css"
 import AddReviewForm from "../reviews/AddReviewForm"
 
 
@@ -18,19 +18,29 @@ export default () => {
 
     return (
         <>
-            <h2>Reviews</h2>
 
-            <div className="fakeLink href" onClick={toggle}>Park Reviews</div>
-
-            <ul className="reviews">
-                {
-                    reviews.map(review => {
-                        const dPar = parks.find(dp => dp.id === review.parkId)
-
-                        return <Review key={review.id} park={dPar} review={review} />
-                    })
+            {/* <div className="fakeLink href" onClick={toggle}>Park Reviews</div> */}
+            <Button className="AddReviewForm" color="primary" onClick={() => {
+                const userId = localStorage.getItem("dog_owner")
+                if (userId) {
+                    // If the user is authenticated, show the new review form
+                    toggle()
                 }
-            </ul>
+
+
+            }}>Add review</Button>
+
+            <div className="reviews">
+                <div className="reviewedDogParks">
+                    {
+                        reviews.map(review => {
+                            const dPar = parks.find(dp => dp.id === review.parkId)
+
+                            return <Review key={review.id} dogPark={dPar} review={review} />
+                        })
+                    }
+                </div>
+            </div>
 
             <Modal isOpen={modal} toggle={toggle}>
                 <ModalHeader toggle={toggle}>
