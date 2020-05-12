@@ -5,22 +5,22 @@ import "./Review.css"
 
 export default props => {
     const { addReview } = useContext(ReviewContext)
-    const { park_locations } = useContext(DogParkContext)
+    const { parks } = useContext(DogParkContext)
 
     const reviewTitle = useRef()
     const review_description = useRef()
-    const park_location = useRef()
+    const park = useRef()
 
 
     const constructNewReview = () => {
-        const park_location_Id = parseInt(park_location.current.value)
+        const parkId = parseInt(park.current.value)
 
-        if (park_location_Id === 0) {
+        if (parkId === 0) {
             window.alert("Please select a park to review")
         } else {
             addReview({
                 reviewTitle: reviewTitle.current.value,
-                park_location_Id: park_location_Id,
+                parkId: parkId,
                 review_description: review_description.current.value
             })
                 .then(props.toggler)
@@ -40,7 +40,7 @@ export default props => {
                         required
                         autoFocus
                         className="form-control"
-                        placeholder="Park Name"
+                        placeholder="Review Title"
                     />
                 </div>
             </fieldset>
@@ -65,15 +65,15 @@ export default props => {
                     <label htmlFor="park_review__form_location">Select a park to review: </label>
                     <select
                         defaultValue=""
-                        name="park_location"
-                        ref={park_location}
+                        name="park"
+                        ref={park}
                         id="park_review__form_location"
                         className="form-control"
                     >
                         <option value="0">Select a park to review</option>
-                        {park_locations.map(e => (
+                        {parks.map(e => (
                             <option key={e.id} value={e.id}>
-                                {e.reviewTitle}
+                                {e.park_name}
                             </option>
                         ))}
                     </select>

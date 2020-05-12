@@ -20,9 +20,10 @@ export default ({ dogPark, review }) => {
             <div className="review__review_description">{review.review_description}</div>
             <div className="dogPark__park_name">{dogPark.park_name}</div>
 
-            <span className="fakeLink icon--delete" onClick={() => {
-                deleteReview(review)
-            }}>🗑</span>
+            <Button color="danger" onClick={() => {
+                deleteReview(review.id)
+                toggle()
+            }}>Delete</Button>
 
 
             <Modal isOpen={modal} toggle={toggle}>

@@ -31,19 +31,8 @@ export const ReviewDataProvider = (props) => {
             .then(getReviews)
     }
 
-    const updateReview = review => {
-        return fetch(`http://localhost:8088/reviews/${review.id}`, {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(review)
-        })
-            .then(getReviews)
-    }
-
     const deleteReview = reviewId => {
-        return fetch(`http://localhost:8088/animals/${reviewId}`, {
+        return fetch(`http://localhost:8088/reviews/${reviewId}`, {
             method: "DELETE"
         })
             .then(getReviews)
@@ -62,7 +51,6 @@ export const ReviewDataProvider = (props) => {
             {
                 reviews,
                 addReview,
-                updateReview,
                 deleteReview
             }
         }>

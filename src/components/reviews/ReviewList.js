@@ -18,8 +18,6 @@ export default () => {
 
     return (
         <>
-
-            {/* <div className="fakeLink href" onClick={toggle}>Park Reviews</div> */}
             <Button className="AddReviewForm" color="primary" onClick={() => {
                 const userId = localStorage.getItem("dog_owner")
                 if (userId) {
