@@ -20,24 +20,20 @@ export const FavoriteDataProvider = (props) => {
             .then(setFavorites)
     }
 
-    const addFavorite = favorites => {
+    const addFavorite = favorite => {
         return fetch("http://localhost:8088/favorites", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(favorites)
+            body: JSON.stringify(favorite)
         })
             .then(getFavorites)
     }
 
-    const updateFavorite = favorite => {
-        return fetch(`http://localhost:8088/favorites/${favorites.id}`, {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(favorite)
+    const deleteFavorite = favoriteId => {
+        return fetch(`http://localhost:8088/favorites/${favoriteId}`, {
+            method: "DELETE"
         })
             .then(getFavorites)
     }
@@ -57,7 +53,7 @@ export const FavoriteDataProvider = (props) => {
             {
                 favorites,
                 addFavorite,
-                updateFavorite
+                deleteFavorite
             }
         }>
             {props.children}

@@ -1,14 +1,14 @@
 import React, { useState } from "react"
 import { Button, Modal, ModalHeader, ModalBody } from "reactstrap"
+import { FavoriteContext } from "../favorite/FavoriteDataProvider"
 
-
-// import { DogParkContext } from "./ParkDataProvider"
+import { DogParkContext } from "./ParkDataProvider"
 import { EditParkForm } from "./EditParkForm"
 import "./Park.css"
 
 
-export const DogPark = ({ dogPark }) => {
-    // const { updatePark } = useContext(DogParkContext)
+export const DogPark = ({ dogPark, favorite }) => {
+    const { addFavorite } = useContext(FavoriteContext)
     const [editModal, setEditModal] = useState(false)
     const toggleEdit = () => setEditModal(!editModal)
 
@@ -23,22 +23,14 @@ export const DogPark = ({ dogPark }) => {
 
 
             <Button className="EditParkForm" color="primary" onClick={() => {
-                toggleEdit()
+                toggle()
             }}>Edit</Button>
-            <Button className="FavoriteButton">Favorite</Button>
+            <Button className="FavoriteButton" color="primary" onClick={() => {
+                toggle()
+            }}>Favorite</Button>
 
 
-            {/* <Modal isOpen={editModal} toggle={toggleEdit}>
-                <ModalHeader toggle={toggleEdit}>
-                    {dogPark.park_name}
-                </ModalHeader>
-                <ModalBody>
 
-                    <EditParkForm key={dogPark.id} toggleEdit={toggleEdit} dogPark={dogPark} />
-
-
-                </ModalBody>
-            </Modal> */}
 
             <Modal isOpen={editModal} toggle={toggleEdit}>
                 <ModalHeader toggle={toggleEdit}>

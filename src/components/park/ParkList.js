@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react"
 import { Button, Modal, ModalHeader, ModalBody } from "reactstrap"
 
+import { FavoriteContext } from "../favorite/FavoriteDataProvider"
 import { DogParkContext } from "./ParkDataProvider"
 import AddParkForm from "./AddParkForm"
 import { DogPark } from "../park/Park"
