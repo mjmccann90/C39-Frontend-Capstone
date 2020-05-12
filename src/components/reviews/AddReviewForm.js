@@ -14,6 +14,7 @@ export default props => {
 
     const constructNewReview = () => {
         const parkId = parseInt(park.current.value)
+        const userId = parseInt(localStorage.getItem("dog_owner"))
 
         if (parkId === 0) {
             window.alert("Please select a park to review")
@@ -21,7 +22,8 @@ export default props => {
             addReview({
                 reviewTitle: reviewTitle.current.value,
                 parkId: parkId,
-                review_description: review_description.current.value
+                review_description: review_description.current.value,
+                userId: userId
             })
                 .then(props.toggler)
         }
