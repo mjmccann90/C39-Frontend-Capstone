@@ -21,10 +21,24 @@ export const DogPark = ({ dogPark }) => {
             <div className="dogPark__city">{dogPark.city}</div>
             <div className="dogPark__state">{dogPark.state}</div>
 
+
             <Button className="EditParkForm" color="primary" onClick={() => {
                 toggleEdit()
             }}>Edit</Button>
             <Button className="FavoriteButton">Favorite</Button>
+
+
+            {/* <Modal isOpen={editModal} toggle={toggleEdit}>
+                <ModalHeader toggle={toggleEdit}>
+                    {dogPark.park_name}
+                </ModalHeader>
+                <ModalBody>
+
+                    <EditParkForm key={dogPark.id} toggleEdit={toggleEdit} dogPark={dogPark} />
+
+
+                </ModalBody>
+            </Modal> */}
 
             <Modal isOpen={editModal} toggle={toggleEdit}>
                 <ModalHeader toggle={toggleEdit}>
