@@ -8,11 +8,11 @@ import "./Park.css"
 
 
 export const DogPark = ({ dogPark, setActiveList }) => {
+    const { parks } = useContext(DogParkContext)
     const { addFavorite } = useContext(FavoriteContext)
     const [editModal, setEditModal] = useState(false)
     const toggleEdit = () => setEditModal(!editModal)
 
-    const { addFavorite } = useContext(FavoriteContext)
 
     // Function to create an object and save it to the API
     const constructNewFavorite = () => {
@@ -20,8 +20,7 @@ export const DogPark = ({ dogPark, setActiveList }) => {
         // create a new park object
         // Make sure that the park object has the userId foreign key on it.
         const newFavoriteObject = {
-            parkId: parkId,
-            reviewId: reviewId,
+            parkId: dogPark.Id,
             userId: userId
         }
         addFavorite(newFavoriteObject)
@@ -39,7 +38,7 @@ export const DogPark = ({ dogPark, setActiveList }) => {
 
 
             <Button className="EditParkForm" color="primary" onClick={() => {
-                toggle()
+                toggleEdit()
             }}>Edit</Button>
             <Button className="FavoriteButton" color="primary" onClick={() => {
                 constructNewFavorite()

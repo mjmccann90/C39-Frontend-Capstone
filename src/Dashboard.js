@@ -5,7 +5,7 @@ import { ParkList } from "../src/components/park/ParkList"
 import "../src/components/park/Park.css"
 
 
-import { FavoriteDataProvider } from "./components/favorite/FavoriteDataProvider"
+import { FavoriteDataProvider } from "../src/components/favorite/FavoriteDataProvider"
 import { FavoriteList } from "./components/favorite/FavoriteList"
 import "../src/components/favorite/Favorite.css"
 

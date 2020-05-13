@@ -4,7 +4,7 @@ import { FavoriteContext } from "./FavoriteDataProvider"
 import { DogParkContext } from "../park/ParkDataProvider"
 import "./Favorite.css"
 
-export const Favorite = ({ dogPark }) => {
+export const Favorite = ({ dogPark, favorite }) => {
     const { park } = useContext(DogParkContext)
     const { addFavorite } = useContext(FavoriteContext)
     return (
@@ -14,6 +14,7 @@ export const Favorite = ({ dogPark }) => {
             <div className="dogPark__favorite_street_address">{dogPark.street_address}</div>
             <div className="dogPark__city">{dogPark.city}</div>
             <div className="dogPark__state">{dogPark.state}</div>
+            <div className="dogPark__favoriteId">{favorite.favoriteId}</div>
 
         </section >
     )
