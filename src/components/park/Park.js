@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useContext } from "react"
 import { Button, Modal, ModalHeader, ModalBody } from "reactstrap"
 import { FavoriteContext } from "../favorite/FavoriteDataProvider"
 
@@ -7,10 +7,26 @@ import { EditParkForm } from "./EditParkForm"
 import "./Park.css"
 
 
-export const DogPark = ({ dogPark, favorite }) => {
+export const DogPark = ({ dogPark, setActiveList }) => {
     const { addFavorite } = useContext(FavoriteContext)
     const [editModal, setEditModal] = useState(false)
     const toggleEdit = () => setEditModal(!editModal)
+
+    const { addFavorite } = useContext(FavoriteContext)
+
+    // Function to create an object and save it to the API
+    const constructNewFavorite = () => {
+        const userId = parseInt(localStorage.getItem("dog_owner"))
+        // create a new park object
+        // Make sure that the park object has the userId foreign key on it.
+        const newFavoriteObject = {
+            parkId: parkId,
+            reviewId: reviewId,
+            userId: userId
+        }
+        addFavorite(newFavoriteObject)
+    }
+
 
     return (
 
@@ -26,7 +42,8 @@ export const DogPark = ({ dogPark, favorite }) => {
                 toggle()
             }}>Edit</Button>
             <Button className="FavoriteButton" color="primary" onClick={() => {
-                toggle()
+                constructNewFavorite()
+                setActiveList("favoriteDogParks")
             }}>Favorite</Button>
 
 

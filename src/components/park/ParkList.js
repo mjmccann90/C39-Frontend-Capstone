@@ -1,13 +1,13 @@
 import React, { useContext, useState } from "react"
 import { Button, Modal, ModalHeader, ModalBody } from "reactstrap"
 
-import { FavoriteContext } from "../favorite/FavoriteDataProvider"
+//import { FavoriteContext } from "../favorite/FavoriteDataProvider"
 import { DogParkContext } from "./ParkDataProvider"
 import AddParkForm from "./AddParkForm"
 import { DogPark } from "../park/Park"
 import "./Park.css"
 
-export const ParkList = () => {
+export const ParkList = ({ setActiveList }) => {
     const { parks } = useContext(DogParkContext) || []
 
     const [modal, setModal] = useState(false)
@@ -26,7 +26,7 @@ export const ParkList = () => {
             <div className="dogParks"></div>
             <div className="allTheDogParks">
                 {
-                    parks.map(dogP => <DogPark key={dogP.id} dogPark={dogP} />)
+                    parks.map(dogP => <DogPark key={dogP.id} dogPark={dogP} setActiveList={setActiveList} />)
                 }
             </div>
 
