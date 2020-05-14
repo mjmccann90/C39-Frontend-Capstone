@@ -5,8 +5,9 @@ import { ParkList } from "../src/components/park/ParkList"
 import "../src/components/park/Park.css"
 
 
-// import { FavoriteDataProvider } from "./components/favorite/FavoriteDataProvider"
-// import { FavoriteList } from "./components/favorite/FavoriteList"
+import { FavoriteDataProvider } from "../src/components/favorite/FavoriteDataProvider"
+import { FavoriteList } from "./components/favorite/FavoriteList"
+import "../src/components/favorite/Favorite.css"
 
 import { ReviewDataProvider } from "../src/components/reviews/ReviewDataProvider"
 import ReviewList from "../src/components/reviews/ReviewList"
@@ -22,26 +23,9 @@ export const Dashboard = () => {
     const [activeList, setActiveList] = useState("allTheDogParks")
     const [components, setComponents] = useState()
 
-    const showDogParks = () => (
-        <ParkDataProvider>
-            <ParkList />
-        </ParkDataProvider>
-    )
-    const showReviewedDogParks = () => (
-        <ParkDataProvider>
-            <ReviewDataProvider>
-                <ReviewList />
-            </ReviewDataProvider>
-        </ParkDataProvider>
-    )
-
-    // const showFavoriteDogParks = () => (
-    //     <ParkDataProvider>
-    //         <FavoriteDataProvider>
-    //             <FavoriteList />
-    //         </FavoriteDataProvider>
-    //     </ParkDataProvider >
-    // )
+    const showDogParks = () => <ParkList setActiveList={setActiveList} />
+    const showReviewedDogParks = () => <ReviewList />
+    const showFavoriteDogParks = () => <FavoriteList />
 
     /*
         This effect hook determines which list is shown
@@ -54,39 +38,41 @@ export const Dashboard = () => {
         else if (activeList === "reviewedDogParks") {
             setComponents(showReviewedDogParks)
         }
-        // else if (activeList === "favoriteDogParks") {
-        //     setComponents(showFavoriteDogParks)
-        // }
+        else if (activeList === "favoriteDogParks") {
+            setComponents(showFavoriteDogParks)
+        }
+
     }, [activeList])
 
 
     return (
         <div className="mainContainer">
-            <div className="searchContainer">
-                <ParkDataProvider>
-                    {/* <FavoriteDataProvider> */}
+
+            <ParkDataProvider>
+                <FavoriteDataProvider>
                     <ReviewDataProvider>
+                        <div className="searchContainer">
 
-                        <SearchBar setTerms={setTerms} />
-                        <SearchResults searchTerms={searchTerms} />
+                            <SearchBar setTerms={setTerms} />
+                            <SearchResults searchTerms={searchTerms} />
 
+                        </div>
+                        <div className="dataContainer">
+                            <div className="listContainer">
+                                <div className="links">
+                                    <div className="fakeLink href" onClick={() => setActiveList("allTheDogParks")}>All the Dog Parks</div>
+                                    < div className="fakeLink href" onClick={() => setActiveList("favoriteDogParks")}> Favorite Parks</div >
+                                    < div className="fakeLink href" onClick={() => setActiveList("reviewedDogParks")}> Reviewed Parks</div >
+                                </div >
+                                <div className="listDisplay">
+                                    {components}
+                                </div >
+                            </div >
+
+                        </div >
                     </ReviewDataProvider>
-                    {/* </FavoriteDataProvider> */}
-                </ParkDataProvider>
-            </div>
-            <div className="dataContainer">
-                <div className="listContainer">
-                    <div className="links">
-                        <div className="fakeLink href" onClick={() => setActiveList("allTheDogParks")}>All the Dog Parks</div>
-                        {/* < div className="fakeLink href" onClick={() => setActiveList("favoriteDogParks")}> Favorite Parks</div > */}
-                        < div className="fakeLink href" onClick={() => setActiveList("reviewedDogParks")}> Reviewed Parks</div >
-                    </div >
-                    <div className="listDisplay">
-                        {components}
-                    </div >
-                </div >
-
-            </div >
+                </FavoriteDataProvider>
+            </ParkDataProvider>
         </div >
     )
 

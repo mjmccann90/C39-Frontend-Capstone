@@ -189,22 +189,21 @@
     {
       "reviewTitle": "It was great!!!",
       "parkId": 3,
-      "review_description": "Was Wifi for the owners",
+      "userId": 1,
+      "review_description": "Has Wifi for the owners",
       "id": 2
     }
   ],
   "favorites": [
     {
-      "id": 1,
+      "id": 2,
       "parkId": 1,
-      "userId": 1,
-      "reviewId": 1
+      "userId": 2
     },
     {
-      "id": 1,
-      "parkId": 1,
-      "userId": 2,
-      "reviewId": 1
+      "parkId": 2,
+      "userId": 1,
+      "id": 5
     }
   ]
 }

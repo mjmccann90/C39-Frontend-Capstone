@@ -1,5 +1,5 @@
-// When we use Employee component in EmployeeList, React takes the keys passed
-// to the Employee component and puts it into one object
+// When we use Review component in ReviewList, React takes the keys passed
+// to the Review component and puts it into one object
 
 import React, { useState, useContext } from "react"
 import { Modal, ModalHeader, ModalBody, Button } from "reactstrap"
