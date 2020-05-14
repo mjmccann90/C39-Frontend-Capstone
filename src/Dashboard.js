@@ -23,26 +23,9 @@ export const Dashboard = () => {
     const [activeList, setActiveList] = useState("allTheDogParks")
     const [components, setComponents] = useState()
 
-    const showDogParks = () => (
-        <ParkDataProvider>
-            <ParkList setActiveList={setActiveList} />
-        </ParkDataProvider>
-    )
-    const showReviewedDogParks = () => (
-        <ParkDataProvider>
-            <ReviewDataProvider>
-                <ReviewList />
-            </ReviewDataProvider>
-        </ParkDataProvider>
-    )
-
-    const showFavoriteDogParks = () => (
-        <ParkDataProvider>
-            <FavoriteDataProvider>
-                <FavoriteList />
-            </FavoriteDataProvider>
-        </ParkDataProvider >
-    )
+    const showDogParks = () => <ParkList setActiveList={setActiveList} />
+    const showReviewedDogParks = () => <ReviewList />
+    const showFavoriteDogParks = () => <FavoriteList />
 
     /*
         This effect hook determines which list is shown
@@ -64,31 +47,32 @@ export const Dashboard = () => {
 
     return (
         <div className="mainContainer">
-            <div className="searchContainer">
-                <ParkDataProvider>
-                    {/* <FavoriteDataProvider> */}
+
+            <ParkDataProvider>
+                <FavoriteDataProvider>
                     <ReviewDataProvider>
+                        <div className="searchContainer">
 
-                        <SearchBar setTerms={setTerms} />
-                        <SearchResults searchTerms={searchTerms} />
+                            <SearchBar setTerms={setTerms} />
+                            <SearchResults searchTerms={searchTerms} />
 
+                        </div>
+                        <div className="dataContainer">
+                            <div className="listContainer">
+                                <div className="links">
+                                    <div className="fakeLink href" onClick={() => setActiveList("allTheDogParks")}>All the Dog Parks</div>
+                                    < div className="fakeLink href" onClick={() => setActiveList("favoriteDogParks")}> Favorite Parks</div >
+                                    < div className="fakeLink href" onClick={() => setActiveList("reviewedDogParks")}> Reviewed Parks</div >
+                                </div >
+                                <div className="listDisplay">
+                                    {components}
+                                </div >
+                            </div >
+
+                        </div >
                     </ReviewDataProvider>
-                    {/* </FavoriteDataProvider> */}
-                </ParkDataProvider>
-            </div>
-            <div className="dataContainer">
-                <div className="listContainer">
-                    <div className="links">
-                        <div className="fakeLink href" onClick={() => setActiveList("allTheDogParks")}>All the Dog Parks</div>
-                        < div className="fakeLink href" onClick={() => setActiveList("favoriteDogParks")}> Favorite Parks</div >
-                        < div className="fakeLink href" onClick={() => setActiveList("reviewedDogParks")}> Reviewed Parks</div >
-                    </div >
-                    <div className="listDisplay">
-                        {components}
-                    </div >
-                </div >
-
-            </div >
+                </FavoriteDataProvider>
+            </ParkDataProvider>
         </div >
     )
 

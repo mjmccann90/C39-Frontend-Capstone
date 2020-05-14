@@ -7,7 +7,11 @@ import "./Favorite.css"
 
 export const FavoriteList = ({ setActiveList }) => {
     const { favorites } = useContext(FavoriteContext)
+    console.log('favorites', favorites);
+
     const { parks } = useContext(DogParkContext)
+    console.log('parks', parks);
+
 
 
     return (
@@ -17,9 +21,8 @@ export const FavoriteList = ({ setActiveList }) => {
             <div className="favoriteDogParks">
                 {
                     favorites.map(favorite => {
-                        const dPar = parks.find(dp => dp.id === favorite.parkId)
 
-                        return <DogPark key={favorite.id} dogPark={dPar} favorite={favorite} setActiveList={setActiveList} />
+                        return <DogPark key={favorite.id} dogPark={favorite} isFavorite={true} setActiveList={setActiveList} />
                     })
                 }
             </div>
