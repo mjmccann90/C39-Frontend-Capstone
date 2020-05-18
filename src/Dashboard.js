@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import { Button } from "reactstrap"
 
 import { ParkDataProvider } from "../src/components/park/ParkDataProvider"
 import { ParkList } from "../src/components/park/ParkList"
@@ -47,6 +48,26 @@ export const Dashboard = () => {
 
     return (
         <div className="mainContainer">
+            <div className="links">
+                <div className="link-items">
+                    <div className="nav-link">
+                        <div className="app_views">
+                            <div className="fakeLink href test" onClick={() => setActiveList("allTheDogParks")}>All the Dog Parks</div>
+                            < div className="fakeLink href test" onClick={() => setActiveList("favoriteDogParks")}> Favorite Parks</div >
+                            < div className="fakeLink href test" onClick={() => setActiveList("reviewedDogParks")}> Reviewed Parks</div >
+                            <Button
+                                color="danger"
+                                onClick={() => {
+                                    localStorage.clear()
+                                    window.location.reload()
+                                }}
+                            >Logout
+                    </Button>
+                        </div>
+                    </div>
+                </div>
+            </div >
+
 
             <ParkDataProvider>
                 <FavoriteDataProvider>
@@ -59,11 +80,6 @@ export const Dashboard = () => {
                         </div>
                         <div className="dataContainer">
                             <div className="listContainer">
-                                <div className="links">
-                                    <div className="fakeLink href" onClick={() => setActiveList("allTheDogParks")}>All the Dog Parks</div>
-                                    < div className="fakeLink href" onClick={() => setActiveList("favoriteDogParks")}> Favorite Parks</div >
-                                    < div className="fakeLink href" onClick={() => setActiveList("reviewedDogParks")}> Reviewed Parks</div >
-                                </div >
                                 <div className="listDisplay">
                                     {components}
                                 </div >
