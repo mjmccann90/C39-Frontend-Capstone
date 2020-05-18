@@ -33,19 +33,19 @@ export const DogPark = ({ dogPark, setActiveList, isFavorite = false }) => {
 
         < section className="dogPark" >
 
-            <div className="dogPark__park_name">{dogPark.park_name}</div>
-            <div className="dogPark__street_address">{dogPark.street_address}</div>
-            <div className="dogPark__city">{dogPark.city}</div>
-            <div className="dogPark__state">{dogPark.state}</div>
+            <div className="dogPark__park_name"><h3>{dogPark.park_name}</h3></div>
+            <div className="dogPark__street_address"><p>{dogPark.street_address}</p></div>
+            <div className="dogPark__city"><p>{dogPark.city}</p></div>
+            <div className="dogPark__state"><p>{dogPark.state}</p></div>
 
 
-            <Button className="EditParkForm" color="primary" onClick={() => {
+            <Button className="EditParkForm" outline color="primary" onClick={() => {
                 toggleEdit()
             }}>Edit</Button>
             {
                 isFavorite
-                    ? <Button className="FavoriteButton" color="primary" onClick={() => deleteFavorite(dogPark.id)}>Unfavorite</Button>
-                    : <Button className="FavoriteButton" color="primary" onClick={constructNewFavorite}>Favorite</Button>
+                    ? <Button className="FavoriteButton" outline color="danger" onClick={() => deleteFavorite(dogPark.id)}>Unfavorite</Button>
+                    : <Button className="FavoriteButton" outline color="secondary" onClick={constructNewFavorite}>Favorite</Button>
             }
 
 
