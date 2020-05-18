@@ -1,3 +1,7 @@
+body {
+  background: url("./images/raisa-milova-wQPpkgo2jzc-unsplash.jpg");
+  opacity: 0.9;
+}
 .mainContainer {
   display: flex;
   flex-direction: row;
@@ -11,10 +15,10 @@
 
 .listContainer {
   padding-top: 3rem;
-  border-top: 1px solid gray;
   display: flex;
   flex-direction: row;
-  border: 1px solid darkorchid;
+  border: 5px solid gray;
+  /* background-color: white; */
 }
 
 .links {
