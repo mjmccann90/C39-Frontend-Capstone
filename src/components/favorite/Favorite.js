@@ -9,12 +9,12 @@ export const Favorite = ({ dogPark, favorite }) => {
     const { addFavorite } = useContext(FavoriteContext)
     return (
 
-        < section className="dogPark__Favorites" >
-            <div className="dogPark__favorite_park_name">{dogPark.park_name}</div>
-            <div className="dogPark__favorite_street_address">{dogPark.street_address}</div>
-            <div className="dogPark__city">{dogPark.city}</div>
-            <div className="dogPark__state">{dogPark.state}</div>
-            <div className="dogPark__favoriteId">{favorite.favoriteId}</div>
+        < section className="favorite" >
+            <div className="dogPark__favorite_park_name"><h3>{dogPark.park_name}</h3></div>
+            <div className="dogPark__favorite_street_address"><p>{dogPark.street_address}</p></div>
+            <div className="dogPark__city"><p>{dogPark.city}</p></div>
+            <div className="dogPark__state"><p>{dogPark.state}</p></div>
+            <div className="dogPark__favoriteId"><p>{favorite.favoriteId}</p></div>
 
         </section >
     )

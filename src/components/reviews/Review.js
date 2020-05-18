@@ -16,9 +16,9 @@ export default ({ dogPark, review }) => {
     return (
 
         < section className="review" >
-            <div className="review__title">{review.reviewTitle}</div>
-            <div className="review__review_description">{review.review_description}</div>
-            <div className="dogPark__park_name">{dogPark.park_name}</div>
+            <div className="review__title"><h3>{review.reviewTitle}</h3></div>
+            <div className="review__review_description"><p>{review.review_description}</p></div>
+            <div className="dogPark__park_name"><p>{dogPark.park_name}</p></div>
 
             <Button color="danger" onClick={() => {
                 deleteReview(review.id)

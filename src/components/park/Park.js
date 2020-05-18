@@ -19,8 +19,8 @@ export const DogPark = ({ dogPark, setActiveList, isFavorite = false }) => {
     // Function to create an object and save it to the API
     const constructNewFavorite = () => {
         const userId = parseInt(localStorage.getItem("dog_owner"))
-        // create a new park object
-        // Make sure that the park object has the userId foreign key on it.
+        // create a new favorite object
+        // Make sure that the favorite object has the userId foreign key on it.
         const newFavoriteObject = {
             parkId: dogPark.id,
             userId: userId
