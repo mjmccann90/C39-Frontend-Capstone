@@ -5,27 +5,60 @@ body {
 .mainContainer {
   display: flex;
   flex-direction: row;
-  padding: 0.75rem;
+  /* padding: 0.75rem; */
 }
 
 .dataContainer {
-  padding: 2rem;
+  padding-top: 7rem;
   flex: 4;
+}
+.searchContainer {
+  padding-top: 7rem;
+  padding-left: 10px;
+  color: white;
 }
 
 .listContainer {
   padding-top: 3rem;
   display: flex;
   flex-direction: row;
-  border: 5px solid gray;
-  /* background-color: white; */
+  padding: 10px;
+  background-origin: 5px;
 }
 
 .links {
-  flex: 1;
+  position: absolute;
+  width: 100%;
+  padding: 0;
+  background-color: rgba(59, 59, 59, 0.993);
+  /* margin: 0px -2px 0px -2px; */
+}
+.link-items {
+  background-color: rgba(59, 59, 59, 0.993);
+  display: block;
+  position: relative;
+  height: 6rem;
+}
+.nav-link {
+  position: absolute;
+  display: inline-block;
+  right: 0.5em;
+  bottom: 0;
+}
+.app_views {
+  /* right: 1em; */
+  list-style-type: none;
+  width: 100%;
+}
+.test {
+  color: white;
+  font-family: "Droid Sans";
+  display: inline-block;
+  padding: 0 0.5em 0 0.5em;
+  margin: 23px;
+  font-size: 23px;
 }
 
 .listDisplay {
   flex: 5;
-  border: 1px dotted navy;
 }
