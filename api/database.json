@@ -20,17 +20,17 @@
       "id": 1,
       "park_name": "Shelby Dog Park",
       "street_address": "Shelby Ave and South 20th Street",
-      "city": "Nashville",
+      "city": "Nashville,",
       "state": "TN",
       "userId": 1
     },
     {
       "id": 2,
-      "userId": 1,
       "park_name": "Centennial Dog Park",
       "street_address": "2500 West End Ave",
-      "city": "Nashville",
-      "state": "TN"
+      "city": "Nashville,",
+      "state": "TN",
+      "userId": 1
     },
     {
       "id": 3,
@@ -113,15 +113,6 @@
       "state": "TN"
     },
     {
-      "id": 13,
-      "userId": 1,
-      "reviewId": 1,
-      "park_name": "Barkwood Dog Park",
-      "street_address": "920 Heritage Way",
-      "city": "Brentwood",
-      "state": "TN"
-    },
-    {
       "id": 14,
       "userId": 1,
       "park_name": "Nashboro Dog Park",
@@ -180,30 +171,42 @@
   ],
   "reviews": [
     {
-      "id": 1,
-      "userId": 1,
-      "parkId": 1,
-      "reviewTitle": "review title",
-      "review_description": "review description"
-    },
-    {
       "reviewTitle": "It was great!!!",
       "parkId": 3,
       "userId": 1,
       "review_description": "Has Wifi for the owners",
       "id": 2
+    },
+    {
+      "reviewTitle": "🤯",
+      "parkId": 14,
+      "review_description": "Has the all the cute dog moms ",
+      "userId": 1,
+      "id": 3
+    },
+    {
+      "reviewTitle": "🤲🏻",
+      "parkId": 11,
+      "review_description": "Plenty of benches and shade trees",
+      "userId": 1,
+      "id": 4
     }
   ],
   "favorites": [
     {
-      "id": 2,
       "parkId": 1,
-      "userId": 2
+      "userId": 1,
+      "id": 6
     },
     {
       "parkId": 2,
       "userId": 1,
-      "id": 5
+      "id": 7
+    },
+    {
+      "parkId": 4,
+      "userId": 1,
+      "id": 8
     }
   ]
 }
