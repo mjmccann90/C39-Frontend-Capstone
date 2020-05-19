@@ -171,26 +171,21 @@
   ],
   "reviews": [
     {
-      "reviewTitle": "It was great!!!",
-      "parkId": 3,
-      "userId": 1,
-      "review_description": "Has Wifi for the owners",
-      "id": 2
-    },
-    {
       "reviewTitle": "🤲🏻",
       "parkId": 11,
       "review_description": "Plenty of benches and shade trees",
       "userId": 1,
       "id": 4
+    },
+    {
+      "reviewTitle": "test",
+      "parkId": 1,
+      "review_description": "test",
+      "userId": 1,
+      "id": 5
     }
   ],
   "favorites": [
-    {
-      "parkId": 1,
-      "userId": 1,
-      "id": 6
-    },
     {
       "parkId": 2,
       "userId": 1,
@@ -207,9 +202,19 @@
       "id": 9
     },
     {
-      "parkId": 1,
+      "parkId": 9,
       "userId": 1,
       "id": 10
+    },
+    {
+      "parkId": 7,
+      "userId": 1,
+      "id": 11
+    },
+    {
+      "parkId": 6,
+      "userId": 1,
+      "id": 12
     }
   ]
 }

@@ -18,7 +18,7 @@ export const SearchResults = ({ searchTerms }) => {
 
     return (
         <div className="searchResults">
-            <h3>Results</h3>
+            <div className="results"><h3>Results</h3></div>
             <div className="parks">
                 {
                     filteredParks.map(park => <div key={park.id}>{park.park_name}</div>)

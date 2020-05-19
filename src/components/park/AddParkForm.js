@@ -33,7 +33,7 @@ export default props => {
             <h2 className="parkForm__Name"></h2>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="parkForm--park_name"> </label>
+                    <label htmlFor="parkForm--park_name"> Park Name</label>
                     <input
                         type="text"
                         id="park_name"
@@ -47,7 +47,7 @@ export default props => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="parkForm--street_address"> </label>
+                    <label htmlFor="parkForm--street_address">Street Address </label>
                     <input
                         type="text"
                         id="street_address"
@@ -61,7 +61,7 @@ export default props => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="city"></label>
+                    <label htmlFor="city"> City </label>
                     <input
                         type="text"
                         id="city"
@@ -75,7 +75,7 @@ export default props => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="state"> </label>
+                    <label htmlFor="state"> State </label>
                     <input
                         type="text"
                         id="state"

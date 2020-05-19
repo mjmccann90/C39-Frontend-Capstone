@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react"
+import React, { useContext, useState, useEffect } from "react"
 import { Button, Modal, ModalHeader, ModalBody } from "reactstrap"
 
 //import { FavoriteContext } from "../favorite/FavoriteDataProvider"
@@ -7,11 +7,22 @@ import AddParkForm from "./AddParkForm"
 import { DogPark } from "../park/Park"
 import "./Park.css"
 
-export const ParkList = ({ setActiveList }) => {
+export const ParkList = ({ setActiveList, searchTerms }) => {
     const { parks } = useContext(DogParkContext) || []
 
     const [modal, setModal] = useState(false)
     const toggle = () => setModal(!modal)
+
+    const [filteredParks, setFiltered] = useState([])
+
+    useEffect(() => {
+        if (searchTerms !== "") {
+            const subset = parks.filter(park => park.park_name.toLowerCase().includes(searchTerms))
+            setFiltered(subset)
+        } else {
+            setFiltered([])
+        }
+    }, [searchTerms, parks])
 
     return (
         <>

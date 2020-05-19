@@ -20,7 +20,7 @@ export default ({ dogPark, review }) => {
             <div className="review__review_description"><p>{review.review_description}</p></div>
             <div className="dogPark__park_name"><p>{dogPark.park_name}</p></div>
 
-            <Button color="danger" onClick={() => {
+            <Button outline color="danger" onClick={() => {
                 deleteReview(review.id)
                 toggle()
             }}>Delete</Button>
