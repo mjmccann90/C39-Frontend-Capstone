@@ -176,45 +176,7 @@
       "review_description": "Plenty of benches and shade trees",
       "userId": 1,
       "id": 4
-    },
-    {
-      "reviewTitle": "test",
-      "parkId": 1,
-      "review_description": "test",
-      "userId": 1,
-      "id": 5
     }
   ],
-  "favorites": [
-    {
-      "parkId": 2,
-      "userId": 1,
-      "id": 7
-    },
-    {
-      "parkId": 4,
-      "userId": 1,
-      "id": 8
-    },
-    {
-      "parkId": 1,
-      "userId": 1,
-      "id": 9
-    },
-    {
-      "parkId": 9,
-      "userId": 1,
-      "id": 10
-    },
-    {
-      "parkId": 7,
-      "userId": 1,
-      "id": 11
-    },
-    {
-      "parkId": 6,
-      "userId": 1,
-      "id": 12
-    }
-  ]
+  "favorites": []
 }

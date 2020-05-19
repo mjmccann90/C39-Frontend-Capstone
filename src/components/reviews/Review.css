@@ -4,12 +4,6 @@
   justify-content: space-between;
   background-color: rgba(59, 59, 59, 0.993);
   border-radius: 5px;
-  height: 100%;
-}
-
-.reviews {
-  flex: 5;
-  max-height: 500px;
 }
 
 .review {
@@ -22,13 +16,10 @@
   margin-top: 15px;
   margin-right: 50px;
   margin-left: 50px;
-  margin-bottom: 95%;
   text-align: left;
   width: 21%;
-  height: 20%;
   padding: 2px;
   background-color: #102b0e;
-  display: flex;
 }
 
 .review:hover {
@@ -38,9 +29,4 @@
 h3,
 p {
   color: white;
-}
-
-.listDisplay {
-  flex: 5;
-  height: 100%;
 }

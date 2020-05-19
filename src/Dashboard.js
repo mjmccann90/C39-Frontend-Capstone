@@ -17,6 +17,8 @@ import "../src/components/reviews/Review.css"
 import { SearchBar } from "../src/components/search/Searchbar"
 import { SearchResults } from "../src/components/search/SearchResult"
 
+import Logo from "../src/components/images/615PupParks.png"
+
 import "./components/Layout.css"
 
 export const Dashboard = () => {
@@ -50,6 +52,7 @@ export const Dashboard = () => {
         <div className="mainContainer">
             <div className="links">
                 <div className="link-items">
+                    <div><img className="logo" src={Logo}></img></div>
                     <div className="nav-link">
                         <div className="app_views">
                             <div className="fakeLink href test" onClick={() => setActiveList("allTheDogParks")}>All the Dog Parks</div>
