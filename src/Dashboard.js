@@ -55,14 +55,10 @@ export const Dashboard = () => {
                             <div className="fakeLink href test" onClick={() => setActiveList("allTheDogParks")}>All the Dog Parks</div>
                             < div className="fakeLink href test" onClick={() => setActiveList("favoriteDogParks")}> Favorite Parks</div >
                             < div className="fakeLink href test" onClick={() => setActiveList("reviewedDogParks")}> Reviewed Parks</div >
-                            <Button
-                                color="danger"
-                                onClick={() => {
-                                    localStorage.clear()
-                                    window.location.reload()
-                                }}
-                            >Logout
-                    </Button>
+                            <div className="fakeLink href test" onClick={() => {
+                                localStorage.clear()
+                                window.location.reload()
+                            }}>Logout</div>
                         </div>
                     </div>
                 </div>
@@ -79,6 +75,7 @@ export const Dashboard = () => {
 
                         </div>
                         <div className="dataContainer">
+
                             <div className="listContainer">
                                 <div className="listDisplay">
                                     {components}

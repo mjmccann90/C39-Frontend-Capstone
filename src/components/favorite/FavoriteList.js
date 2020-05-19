@@ -17,16 +17,16 @@ export const FavoriteList = ({ setActiveList }) => {
     return (
         <>
 
-            <div className="favorites"></div>
-            <div className="favoriteDogParks">
-                {
-                    favorites.map(favorite => {
+            <div className="favorites">
+                <div className="favoriteDogParks">
+                    {
+                        favorites.map(favorite => {
 
-                        return <DogPark key={favorite.id} dogPark={favorite} isFavorite={true} setActiveList={setActiveList} />
-                    })
-                }
+                            return <DogPark key={favorite.id} dogPark={favorite} isFavorite={true} setActiveList={setActiveList} />
+                        })
+                    }
+                </div>
             </div>
-
 
         </>
     )
