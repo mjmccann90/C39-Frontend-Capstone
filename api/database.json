@@ -25,14 +25,6 @@
       "userId": 1
     },
     {
-      "id": 2,
-      "park_name": "Centennial Dog Park",
-      "street_address": "2500 West End Ave",
-      "city": "Nashville,",
-      "state": "TN",
-      "userId": 1
-    },
-    {
       "id": 3,
       "userId": 1,
       "park_name": "Stones River Dog Park",
@@ -169,14 +161,6 @@
       "state": "TN"
     }
   ],
-  "reviews": [
-    {
-      "reviewTitle": "🤲🏻",
-      "parkId": 11,
-      "review_description": "Plenty of benches and shade trees",
-      "userId": 1,
-      "id": 4
-    }
-  ],
+  "reviews": [],
   "favorites": []
 }

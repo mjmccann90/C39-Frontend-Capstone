@@ -55,7 +55,7 @@ export const Dashboard = () => {
                     <div><img className="logo" src={Logo}></img></div>
                     <div className="nav-link">
                         <div className="app_views">
-                            <div className="fakeLink href test" onClick={() => setActiveList("allTheDogParks")}>All the Dog Parks</div>
+                            <div className="fakeLink href test" onClick={() => setActiveList("allTheDogParks")}>All Dog Parks</div>
                             < div className="fakeLink href test" onClick={() => setActiveList("favoriteDogParks")}> Favorite Parks</div >
                             < div className="fakeLink href test" onClick={() => setActiveList("reviewedDogParks")}> Reviewed Parks</div >
                             <div className="fakeLink href test" onClick={() => {

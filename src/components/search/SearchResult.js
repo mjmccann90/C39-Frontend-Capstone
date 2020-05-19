@@ -21,7 +21,7 @@ export const SearchResults = ({ searchTerms }) => {
             <div className="results"><h3>Results</h3></div>
             <div className="parks">
                 {
-                    filteredParks.map(park => <div key={park.id}>{park.park_name}</div>)
+                    filteredParks.map(park => <div className="results_spacing" key={park.id}>{park.park_name}</div>)
                 }
             </div>
         </div>

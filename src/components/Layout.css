@@ -13,7 +13,7 @@ body {
   flex: 4;
 }
 .searchContainer {
-  margin-top: 10%;
+  margin-top: 12.3%;
   padding-left: 10px;
   margin-left: 1%;
   margin-right: 1%;
@@ -21,6 +21,7 @@ body {
   background-color: rgba(59, 59, 59, 0.993);
   flex-wrap: wrap;
   border-radius: 5px;
+  padding-bottom: 100%;
 }
 
 .searchResults {
@@ -44,7 +45,7 @@ body {
   margin-right: 1%;
 }
 
-.form-group {
+.maybe {
   margin: 10%;
 }
 
@@ -91,12 +92,17 @@ body {
 
 .listDisplay {
   flex: 5;
-  height: 200px;
+  height: 180px;
 }
 
 .logo {
-  width: 175px;
+  width: 155px;
   height: 135px;
   margin-top: -15px;
-  margin-left: -7px;
+  margin-left: 25px;
+}
+
+.results_spacing {
+  padding-bottom: 5%;
+  margin-left: 10%;
 }

@@ -2,7 +2,7 @@ import React, { useRef } from "react"
 
 export const SearchBar = ({ setTerms }) => (
     <fieldset>
-        <div className="form-group">
+        <div className="form-group maybe">
             <label htmlFor="searchTerms"><h3>Search:</h3></label>
             <input onKeyUp={e => setTerms(e.target.value)}
                 type="text"
